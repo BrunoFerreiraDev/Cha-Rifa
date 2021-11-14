@@ -1,0 +1,63 @@
+.content{
+    display: flex;
+    justify-content: center;
+    height: 77.5rem;
+    padding-top: 0.7rem;
+  
+}
+.container{
+    display: flex;
+    justify-content: center;
+    width: 68.375rem;
+    height: 75.875rem;
+
+    background-size: 68.375rem 75.875rem;
+    background-image: url('/images/imgBackground1.png');
+    border: 5px solid #0080A7;
+
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    border-radius: 40px;
+
+    #buttomNextPage{
+        background: var(--white);
+        border-radius: 25px;
+        height: 40px;
+        width: 300px;
+        position: absolute;
+        top: 575px;
+        padding-left: 12px;
+        padding-top: 2px;
+        
+        transition: background-color 0.2s;
+
+        &:hover{
+            background-color: #46ebb4;
+        }
+    }
+}
+
+.gridNumbers{
+    height: 33rem;
+    width:52rem;
+    display: grid;
+    grid-template-columns: repeat(10, 0.3fr);
+    grid-template-rows: repeat(8, 0.3fr);
+    padding-top: 0.2rem;
+    
+    background: #fff;    
+    position: absolute;
+    top: 680px;
+
+    button{
+        justify-self: center;
+        height: 3.8rem;
+        width: 4.8rem;
+        background: #0080A7;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+}
