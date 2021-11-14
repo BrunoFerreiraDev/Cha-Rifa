@@ -25,7 +25,6 @@ export default function Home() {
                             )
                         })
                     }
-                    {array.map(arr => console.log(arr))}
                 </div>
             </div>
         </main >
