@@ -1,11 +1,17 @@
+import { ModalCadastrar } from '../components/ModalCadastrar';
+import { ModalProvider } from '../ModalProvider'
+import Modal from 'react-modal'
 import '../../styles/globals.scss'
-import { Context } from '../Context'
+Modal.setAppElement('#__next')
 
 function MyApp({ Component, pageProps }) {
+
   return (
-    <Context.Provider value={[]}>
+    <ModalProvider >
+      <ModalCadastrar />
       <Component {...pageProps} />
-    </Context.Provider>
+
+    </ModalProvider>
   )
 }
 

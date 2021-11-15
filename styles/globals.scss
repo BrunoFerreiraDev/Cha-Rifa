@@ -5,16 +5,19 @@
 }
 
 :root{
+  --background: #f0f2f5;
   --white: #FFFFFF;
 
   --gray-100: #e1e1e6;
   --gray300: #a8a8b3;
-  --gray-800: #29292e;
-  --gray-800: #1f2729;
-  --gray--900: #121214;
+  --brown-200: #898989;
 
   --cyan-500: #61dafb;
-  --Blue-600: #0080a7;
+  --blue-600: #0080a7;
+  
+  --green-100: #46ebb4;
+
+  --brown-200:#898989;
 }
 
 body {
@@ -22,7 +25,7 @@ body {
   color: var(--white);
 }
 body, input textarea, select, button{
-  font: 400 1rem "Roboto", sans-serif;
+  font: 400 1.5rem "poppins", sans-serif;
 }
 
 button{
@@ -44,4 +47,19 @@ a{
   html{
       font: 87.5%;
   }
+}
+
+.react-modal-overlay{
+  //estilos padão de um overlay de modal
+  background: rgba(0,0,0, 0.5);
+  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
