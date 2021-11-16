@@ -32,7 +32,8 @@ export default function Home(isActiveButtomArray) {
                     data.map(data => {
                         return <div key={data.data.indice} >
                             <span>Nome: {data.data.nome}</span>
-                            <span>Numero: {data.data.numero}</span>
+                            <span>Celular: {data.data.numero}</span>
+                            <span>{data.data.indice}</span>
                             <button className={styles.deletar} onClick={
                                 () => handleDeleteCadastro(data.ref['@ref'].id)}>
                                 <img src="/images/RecycleBin.png" alt="RecycleBin" />
