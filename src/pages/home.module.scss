@@ -7,13 +7,12 @@
 }
 .container{
     .isActive{
-        background: red;
+        background: var(--green-100);
     }
 
     display: flex;
     justify-content: center;
     width: 62.375rem;
-    // height: 75.875rem;
     height: 80rem;
 
     background-size: 62.375rem 80rem;
@@ -64,12 +63,6 @@
         color: var(--white);
         font-weight: 700;
         font-size: 1.5rem;
-
-        transition: background-color 0.2s;
-
-        &:focus{
-            background-color:var(--blue-600) ;
-        }
     }
 }
 

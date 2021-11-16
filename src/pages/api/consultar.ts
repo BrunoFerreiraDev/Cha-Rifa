@@ -8,7 +8,10 @@ export default async function consultar(req, res) {
     try {
         const confereIndice = await fauna.query(
 
-            q.Get(q.Match(q.Index('indice'), q.Casefold(0)))
+            q.Map(
+                q.Paginate(q.Documents(q.Collection('cadastro_pessoa'))),
+                q.Lambda(x => q.Get(x))
+            )
 
         ).then((ret) => ret)
             .catch((err) => console.error('Error: %s', err))

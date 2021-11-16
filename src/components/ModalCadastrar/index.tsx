@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Client, query } from 'faunadb'
-import { FormEvent, useContext, useEffect, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import { Context } from '../../ModalProvider';
 import Modal from 'react-modal'
 
@@ -15,15 +14,12 @@ export function ModalCadastrar() {
     const indice = dataContext.indice
 
     async function handleCreateCadastro(event: FormEvent) {
-        event.preventDefault();//previne o comportamento padrão
-        //@ts-ignore
-
-
-
+        event.preventDefault();
         const response = await api.post("/cadastrar", { numero, nome, indice });
 
         setNome('')
         setNumero('')
+
         dataContext.setIsActiveButton(true);
         dataContext.handleCloseModal()
     }
