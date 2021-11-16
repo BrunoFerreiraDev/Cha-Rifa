@@ -11,8 +11,8 @@ interface createContextProps {
     handleCloseModal: () => void;
     handleSetIndice: (param: number) => void;
     indice: number;
-    setIsActiveButton: (boolean: boolean) => void;
-    isActivebutton: boolean;
+    handleSetIndiceArray;
+    indiceArray;
 }
 
 export const Context = createContext({} as createContextProps);
@@ -21,7 +21,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [indice, setIndice] = useState(0);
-    const [isActivebutton, setIsActiveButton] = useState(false);
+    const [indiceArray, setIndiceArray] = useState([]);
 
     function handleOpenModal() {
         setIsOpen(true)
@@ -35,6 +35,10 @@ export function ModalProvider({ children }: ModalProviderProps) {
         setIndice(i)
     }
 
+    function handleSetIndiceArray(array) {
+        setIndiceArray([...array])
+    }
+
     return (
         <Context.Provider value={{
             isOpen,
@@ -42,8 +46,8 @@ export function ModalProvider({ children }: ModalProviderProps) {
             handleCloseModal,
             handleSetIndice,
             indice,
-            setIsActiveButton,
-            isActivebutton
+            handleSetIndiceArray,
+            indiceArray,
         }} >
             {children}
         </Context.Provider >

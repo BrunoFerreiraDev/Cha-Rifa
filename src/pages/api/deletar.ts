@@ -3,16 +3,12 @@ import { fauna } from '../../services/fauna'
 
 export default async function consultar(req, res) {
     const { body, method } = req
-    const { numero, nome, indice } = body
+    const { ref } = body
 
     try {
         const confereIndice = await fauna.query(
-
-            q.Map(
-                q.Paginate(q.Documents(q.Collection('cadastro_pessoa'))),
-                q.Lambda(x => q.Get(x))
-            )
-
+            // cadastro_pessoa
+            q.Delete(q.Ref(q.Collection('cadastro_pessoa'), `${ref}`))
         ).then((ret) => ret)
             .catch((err) => console.error('Error: %s', err))
 

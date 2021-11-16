@@ -5,8 +5,10 @@ import Modal from 'react-modal'
 
 import styles from './modalCadastrar.module.scss'
 import { api } from '../../services/api';
+import { useRouter } from 'next/dist/client/router';
 
 export function ModalCadastrar() {
+    const history = useRouter()
     const dataContext = useContext(Context);
 
     const [numero, setNumero] = useState('');
@@ -15,13 +17,13 @@ export function ModalCadastrar() {
 
     async function handleCreateCadastro(event: FormEvent) {
         event.preventDefault();
-        const response = await api.post("/cadastrar", { numero, nome, indice });
+        await api.post("/cadastrar", { numero, nome, indice });
 
         setNome('')
         setNumero('')
-
-        dataContext.setIsActiveButton(true);
         dataContext.handleCloseModal()
+        history.reload();
+        return
     }
 
     return (

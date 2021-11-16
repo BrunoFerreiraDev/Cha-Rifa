@@ -6,25 +6,50 @@
   
 }
 .container{
-    .isActive{
-        background: var(--green-100);
-    }
-
+    
     display: flex;
     justify-content: center;
     width: 62.375rem;
     height: 80rem;
-
+    
     background-size: 62.375rem 80rem;
     background-image: url('/images/imgBackground.png');
     border: 5px solid var(--blue-600);
-
+    
     border-radius: 40px;
     background-repeat: no-repeat;
     background-position: center;
     box-sizing: border-box;
     border-radius: 40px;
 
+    .buttonBear{
+        height: 55px;
+        width: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25%;
+        border: solid 2px var(--cyan-500);
+        background-color: transparent;
+
+        position: absolute;
+        right: 250px;
+        top: 50px;
+
+        transition: background-color 0.5s;
+
+        &:focus{
+            border:solid 2px var(--blue-600);
+            background-color: var(--green-100);
+        }
+        &:hover{
+            background-color: var(--green-100);
+        }
+    }
+    
+    .isActive{
+        background: var(--green-100);
+    }
     #buttomNextPage{
         background: var(--white);
         border-radius: 25px;

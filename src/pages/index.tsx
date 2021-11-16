@@ -1,23 +1,28 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 import { query as q } from 'faunadb'
 import Head from 'next/head';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../ModalProvider';
 
 import styles from './home.module.scss'
 import { GetStaticProps } from 'next';
 import { fauna } from '../services/fauna';
+import { api } from '../services/api';
+import { useRouter } from 'next/dist/client/router';
 
 
 export default function Home(isActiveButtomArray) {
+
+
+
+    const history = useRouter()
+    const dataContext = useContext(Context);
+
     let isActive = []
     for (let i = 0; i < isActiveButtomArray.data.length; i++) {
         isActive = [...isActive, isActiveButtomArray.data[i].data.indice]
     }
 
-    const dataContext = useContext(Context);
     let array = []
 
     for (let i = 1; i <= 80; i++) {
@@ -25,12 +30,27 @@ export default function Home(isActiveButtomArray) {
     }
     const indice = dataContext.indice
 
-    function twoFunction(i) {
+    function executeTwoFunction(i) {
         if (isActive.indexOf(i) !== -1) {
             return alert('Oi, escolha outro Numero, esse ja é de alguém 😊😊')
         }
         dataContext.handleOpenModal()
         dataContext.handleSetIndice(i)
+    }
+    async function handleLoginAdm() {
+
+        let login = prompt('digite  o login:')
+        let senha = prompt('digite a senha:')
+
+        const response = await api.post('/auth', { login, senha })
+        const data = await response.data
+        if (data) {
+            history.push('/PageAdmin')
+        } else {
+            alert('senha ou login errado')
+        }
+
+
     }
 
     return (
@@ -40,6 +60,9 @@ export default function Home(isActiveButtomArray) {
             </Head>
             <main className={styles.content}>
                 <div className={styles.container}>
+                    <button onClick={handleLoginAdm} className={styles.buttonBear}>
+                        <img src="/iconBearFavicon.png" alt="iconBearFavicon" />
+                    </button>
                     <a id={styles.buttomNextPage} href="#navGridNumbers">
                         <img src="/images/EscolhaUmNumero.png" alt="EscolhaUmNumero" />
                     </a>
@@ -49,11 +72,10 @@ export default function Home(isActiveButtomArray) {
                                 return (
                                     < button
                                         key={arr}
-                                        value={arr}
                                         className={
 
                                             isActive.indexOf(i) !== -1 ? styles.isActive : ''
-                                        } onClick={() => twoFunction(i)} > {arr}</button>
+                                        } onClick={() => executeTwoFunction(i)} > {arr}</button>
                                 )
                             })
                         }
@@ -73,10 +95,9 @@ export default function Home(isActiveButtomArray) {
 }
 
 
-
 export const getStaticProps: GetStaticProps = async () => {
 
-    async function aux(i: number) {
+    async function getListIndice() {
         const response = await fauna.query(
 
             q.Map(
@@ -89,9 +110,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
         return response
     }
-    const response = await aux(1)
-
-
+    const response = await getListIndice()
     const isActiveButtomArray = await JSON.parse(JSON.stringify(response));
 
     return {

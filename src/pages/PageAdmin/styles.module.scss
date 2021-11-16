@@ -1,0 +1,54 @@
+.content{
+    display: grid;
+    justify-content: center;
+    div{
+        display: grid;
+        grid-template-columns: 1fr 0.7fr 0.2fr;
+        height: 4rem;
+        width: 65rem;
+        background: var(--cyan-500);
+        margin-top: 0.5rem;
+        align-items: center;
+
+        border-radius: 1rem;
+        span{
+        color: black;
+        font-size: 1.7rem;
+        font-family: "poppins", sans-serif;
+        font-weight: 500;
+        margin-left: 2rem;
+
+        & + {
+            margin-left: 4rem;
+        }
+        }
+       
+    }
+    .voltar{
+        height: 40px;
+        width: 80px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        border-radius: 15px;
+        background: var(--blue-600);
+        color: var(--white);
+        font-weight: 600;
+    }
+    .deletar{
+        height: 55px;
+        width: 50px;
+        background: transparent;
+        border-radius: 1rem;
+        justify-self: end;
+        margin-right: 0.5rem;
+        &:hover{
+            background-color: red;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
