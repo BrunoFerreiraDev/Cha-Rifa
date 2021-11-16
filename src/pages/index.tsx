@@ -11,11 +11,9 @@ import { GetStaticProps } from 'next';
 import { fauna } from '../services/fauna';
 
 
-
 export default function Home(isActiveButtomArray) {
     let isActive = []
     for (let i = 0; i < isActiveButtomArray.data.length; i++) {
-        console.log(isActiveButtomArray.data[i].data.indice)
         isActive = [...isActive, isActiveButtomArray.data[i].data.indice]
     }
 
@@ -35,8 +33,6 @@ export default function Home(isActiveButtomArray) {
         dataContext.handleSetIndice(i)
     }
 
-
-
     return (
         <>
             <Head>
@@ -50,9 +46,6 @@ export default function Home(isActiveButtomArray) {
                     <div className={styles.gridNumbers} id="navGridNumbers">
                         {
                             array.map((arr, i) => {
-                                console.log(isActive);
-
-
                                 return (
                                     < button
                                         key={arr}
@@ -98,7 +91,6 @@ export const getStaticProps: GetStaticProps = async () => {
     }
     const response = await aux(1)
 
-    // console.log(response.data);
 
     const isActiveButtomArray = await JSON.parse(JSON.stringify(response));
 
@@ -106,6 +98,6 @@ export const getStaticProps: GetStaticProps = async () => {
         props:
             isActiveButtomArray,
 
-        revalidate: 5,//24 hours
+        revalidate: 30,//segundos
     }
 }
