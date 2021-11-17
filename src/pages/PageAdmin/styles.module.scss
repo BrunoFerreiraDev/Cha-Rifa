@@ -1,9 +1,10 @@
 .content{
     display: grid;
     justify-content: center;
+    padding-top: 2rem;
     div{
         display: grid;
-        grid-template-columns: 1fr 0.6fr 0.1fr 0.2fr;
+        grid-template-columns: 0.8fr 0.7fr 0.1fr 0.2fr;
         height: 4rem;
         width: 65rem;
         background: var(--cyan-500);
@@ -27,9 +28,9 @@
     .voltar{
         height: 40px;
         width: 80px;
-        position: absolute;
-        right: 10px;
-        top: 10px;
+        position: relative;
+        left: 0px;
+        top: 0px;
 
         border-radius: 15px;
         background: var(--blue-600);
@@ -40,7 +41,7 @@
         height: 55px;
         width: 50px;
         background: transparent;
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         justify-self: end;
         margin-right: 0.5rem;
         &:hover{
@@ -51,4 +52,143 @@
             width: 50px;
         }
     }
+    @media(max-width:1024px){
+        div{
+            height: 3.3rem;
+            width: 58rem;
+            span{
+                font-size: 1.3rem;
+            }
+        }
+        .voltar{
+            height: 37px;
+            width: 74px;
+            font-size: 1.3rem;
+        }
+    }
+    @media(max-width:900px){
+        div{
+            height: 2.8rem;
+            width: 50rem;
+            span{
+                font-size: 1rem;
+            }
+        }
+        .voltar{
+            height: 35px;
+            width: 68px;
+            font-size: 1.1rem;
+        }
+        .deletar{
+            height: 38px;
+            width: 28px;
+            img{
+                height: 38px;
+                width: 33px;
+            }
+        }
+
+    }
+
+    @media(max-width:768px){
+        div{
+            height: 2.4rem;
+            width: 42.7rem;
+            span{
+                font-size: 1rem;
+            }
+        }
+        .voltar{
+            height: 32px;
+            width: 65px;
+            font-size: 1rem;
+        }
+        .deletar{
+            height: 35px;
+            width: 30px;
+            img{
+                height: 35px;
+                width: 30px;
+            }
+        }
+
+    }
+    @media(max-width:650px){
+        div{
+            height: 2.2rem;
+            width: 33.5rem;
+            span{
+                font-size: 0.9rem;
+            }
+        }
+        .voltar{
+            height: 30px;
+            width: 60px;
+            font-size: 0.9rem;
+        }
+        .deletar{
+            height: 33px;
+            width: 28px;
+            img{
+                height: 33px;
+                width: 28px;
+            }
+        }
+    }
+    @media(max-width:500px){
+        div{
+            height: 2rem;
+            width: 26.5rem;
+            span{
+                font-size: 0.7rem;
+            }
+        }
+        .voltar{
+            height: 24px;
+            width: 54px;
+            font-size: 0.8rem;
+        }
+        .deletar{
+            height: 30px;
+            width: 25px;
+            img{
+                height: 30px;
+                width: 25px;
+            }
+        }
+    }
+    @media(max-width:400px){
+        div{
+            height: 2rem;
+            width: 21.2rem;
+            span{
+                font-size: 0.5rem;
+            }
+        }
+        .voltar{
+            height: 20px;
+            width: 50px;
+            font-size: 0.7rem;
+        }
+        .deletar{
+            height: 28px;
+            width: 22px;
+            
+            img{
+                height: 25px;
+                width: 20px;
+            }
+        }
+    }
+
+    @media(max-width:320px){
+        div{
+            height: 2rem;
+            width: 18.5rem;
+            span{
+                font-size: 0.4rem;
+            }
+        }
+    }
+    
 }
