@@ -74,7 +74,7 @@
         }
     }
     @media(max-width:500px){
-        max-width: 300px;
+        max-width: 376px;
         form{
             
             grid-auto-rows: 0.2fr 0.2fr 0.5fr;
@@ -97,7 +97,9 @@
         }
     }
     @media(max-width:400px){
-        max-width: 240px;
+        max-width: 280px;
+        padding-left: 1rem;
+        padding-right: 1rem;
         form{
             
             grid-auto-rows: 0.1fr 0.1fr 0.3fr;
