@@ -6,7 +6,7 @@
 <img src=".github/preview.PNG" alt="img" widht="750">
 
 ## Link da publicação
-[Calculadora](https://calculadora-zeta-eight.vercel.app/)
+[Calculadora](https://cha-rifa.vercel.app)
 
 ## Tecnologies
 
