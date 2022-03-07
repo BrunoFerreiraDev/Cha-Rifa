@@ -6,7 +6,7 @@
 <img src=".github/preview.PNG" alt="img" widht="750">
 
 ## Link da publicação
-[Calculadora](https://cha-rifa.vercel.app)
+[Chá-Rifa](https://cha-rifa.vercel.app)
 
 ## Tecnologies
 
