@@ -13,10 +13,10 @@
 This project was developed using cutting edge front-end technologies.
 
 
+- [NextJS](https://nextjs.org/docs)
 - [ReactJS](https://reactjs.org/)
 - [JavaScript](https://JavaScript.org/)
-- [Css3](https://css3.org/)
-- [Html5](https://html5.org/)
+- [Sass](https://sass-lang.com/documentation)
 
 ## 💻 Getting started
 
