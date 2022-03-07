@@ -2,7 +2,6 @@
 
 ## Calculadora Mac
 
-
 ## Page
 ![ preview](.github/preview.PNG)
 
