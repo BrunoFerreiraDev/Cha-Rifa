@@ -35,6 +35,7 @@ export default function Home(isActiveButtomArray) {
     }
     dataContext.handleOpenModal();
     dataContext.handleSetIndice(i);
+    window.location.reload();
   }
   async function handleLoginAdm() {
     let login = prompt("digite  o login:");
