@@ -80,7 +80,7 @@ export default function Home(isActiveButtomArray) {
           </div> */}
         </div>
         <div style={{ paddingBottom: "1rem" }}>
-          <h2>Kit Oboticario Homen</h2>
+          <h2>Kit O Boticário Homen</h2>
         </div>
       </main>
     </>
