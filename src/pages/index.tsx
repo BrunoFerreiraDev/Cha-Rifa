@@ -79,7 +79,9 @@ export default function Home(isActiveButtomArray) {
             <span>🎊🎉BOA SORTE!🎉🎊</span>
           </div> */}
         </div>
-        <h2>Kit Oboticario Homen</h2>
+        <div style={{ paddingBottom: "1rem" }}>
+          <h2>Kit Oboticario Homen</h2>
+        </div>
       </main>
     </>
   );
