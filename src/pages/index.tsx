@@ -49,7 +49,7 @@ export default function Home(isActiveButtomArray) {
   return (
     <>
       <Head>
-        <title>Chá-Rifa</title>
+        <title>Sorteios</title>
       </Head>
       <main className={styles.content}>
         <button onClick={handleLoginAdm} className={styles.buttonBear}>
