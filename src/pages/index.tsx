@@ -41,7 +41,7 @@ export default function Home(isActiveButtomArray) {
     if (data) {
       history.push("/PageAdmin");
     } else {
-      alert("senha ou login errado");
+      if (senha) alert("senha ou login errado");
     }
   }
 
