@@ -55,7 +55,7 @@ export default function Home(isActiveButtomArray) {
         <button onClick={handleLoginAdm} className={styles.buttonBear}>
           <img src="/iconBearFavicon.png" alt="iconBearFavicon" />
         </button>
-        <h1>SORTEIO DA COMUNIDADE NOVA</h1>
+        <h1>Sorteio da Comunidade Nova</h1>
         <div className={styles.container}>
           <div className={styles.gridNumbers} id="navGridNumbers">
             {array.map((arr, i) => {
@@ -80,7 +80,7 @@ export default function Home(isActiveButtomArray) {
             <span>🎊🎉BOA SORTE!🎉🎊</span>
           </div> */}
         </div>
-        <h2>KIT OBOTICARIO HOMEM</h2>
+        <h2>Kit Oboticario Homen</h2>
       </main>
     </>
   );
