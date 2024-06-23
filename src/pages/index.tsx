@@ -24,7 +24,6 @@ export default function Home(isActiveButtomArray) {
   for (let i = 1; i <= 300; i++) {
     array[i] = i;
   }
-  const indice = dataContext.indice;
 
   function executeTwoFunction(i) {
     if (isActive.indexOf(i) !== -1) {
