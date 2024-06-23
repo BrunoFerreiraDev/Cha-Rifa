@@ -59,6 +59,7 @@ export default function Home(isActiveButtomArray) {
           <img src="/iconBearFavicon.png" alt="iconBearFavicon" />
         </button>
         <h1>Sorteio da Comunidade Nova</h1>
+        <h3>Kit O Boticário Homen</h3>
         <div className={styles.container}>
           <div className={styles.gridNumbers} id="navGridNumbers">
             {array.map((arr, i) => {
@@ -83,9 +84,7 @@ export default function Home(isActiveButtomArray) {
             <span>🎊🎉BOA SORTE!🎉🎊</span>
           </div> */}
         </div>
-        <div style={{ paddingBottom: "1rem" }}>
-          <h2>Kit O Boticário Homen</h2>
-        </div>
+        <div style={{ paddingBottom: "1rem" }}></div>
       </main>
     </>
   );
