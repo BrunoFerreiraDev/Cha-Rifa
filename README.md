@@ -3,7 +3,6 @@
 ## Calculadora Mac
 
 ## Page
-<img src=".github/preview.PNG" alt="img" widht="750">
 
 ## Link da publicação
 [Chá-Rifa](https://cha-rifa.vercel.app)
