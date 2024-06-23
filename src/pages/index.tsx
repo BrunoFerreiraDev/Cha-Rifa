@@ -13,6 +13,7 @@ import { useRouter } from "next/dist/client/router";
 export default function Home(isActiveButtomArray) {
   const history = useRouter();
   const dataContext = useContext(Context);
+  console.log({ isActiveButtomArray });
 
   let isActive = [];
   for (let i = 0; i < isActiveButtomArray.data.length; i++) {
@@ -27,7 +28,10 @@ export default function Home(isActiveButtomArray) {
 
   function executeTwoFunction(i) {
     if (isActive.indexOf(i) !== -1) {
-      return alert("Oi, escolha outro Numero, esse ja é de alguém 😊😊");
+      const found = isActiveButtomArray.data.find(
+        (item) => item.data.indice === i
+      );
+      if (found) return alert(`Esse numero ja pertence a ${found.data.nome}`);
     }
     dataContext.handleOpenModal();
     dataContext.handleSetIndice(i);
