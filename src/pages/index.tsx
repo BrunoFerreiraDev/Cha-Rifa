@@ -9,6 +9,8 @@ import { GetStaticProps } from "next";
 import { fauna } from "../services/fauna";
 import { api } from "../services/api";
 import { useRouter } from "next/dist/client/router";
+import Image from "next/image";
+import CopySrc from "../image/Copiar.svg";
 
 export default function Home(isActiveButtomArray) {
   const history = useRouter();
@@ -49,6 +51,16 @@ export default function Home(isActiveButtomArray) {
     }
   }
 
+  const handleCopy = () => {
+    const copyText = document.getElementById("inputToCopy") as HTMLInputElement;
+    if (copyText) {
+      // do not delete variables names
+      const unusualeValue1 = copyText?.select();
+      const unusualeValue2 = copyText?.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -84,6 +96,44 @@ export default function Home(isActiveButtomArray) {
             <span>🎊🎉BOA SORTE!🎉🎊</span>
           </div> */}
         </div>
+
+        <div
+          style={{ display: "flex", justifyContent: "center", width: "%100" }}
+        >
+          <div
+            style={{
+              display: "grid",
+              justifyContent: "center",
+            }}
+          >
+            <h4 style={{ textAlign: "center", marginBottom: "0.25rem" }}>
+              QrCode do Pix
+            </h4>
+            <button
+              className={styles.copyCodeButton}
+              onClick={() => handleCopy()}
+            >
+              <Image src={CopySrc} alt="copy button" />
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  paddingLeft: "0.5rem",
+                  whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  overflow: "hidden",
+                }}
+              >
+                Copiar código
+              </p>
+            </button>
+          </div>
+        </div>
+        <input
+          type="text"
+          id="inputToCopy"
+          style={{ visibility: "hidden" }}
+          value="00020101021126440014br.gov.bcb.pix0114481759260001440204RIFA520400005303986540510.005802BR5915COMUNIDADE NOVA6008BRASILIA62070503***6304C18E"
+        />
         <div style={{ paddingBottom: "1rem" }}></div>
       </main>
     </>
