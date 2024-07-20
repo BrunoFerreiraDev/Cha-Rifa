@@ -107,6 +107,9 @@ export default function Home(isActiveButtomArray) {
             }}
           >
             <h4 style={{ textAlign: "center", marginBottom: "0.25rem" }}>
+              Chave do Pix: 48175926000144
+            </h4>
+            <h4 style={{ textAlign: "center", marginBottom: "0.25rem" }}>
               QrCode do Pix
             </h4>
             <button
